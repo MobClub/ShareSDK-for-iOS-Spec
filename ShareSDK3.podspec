@@ -1,12 +1,12 @@
 Pod::Spec.new do |s|
-  s.name             = 'ShareSDK3_IDFA'
+  s.name             = 'ShareSDK3'
   s.version          = "3.5.6"
   s.summary          = 'ShareSDK is the most comprehensive Social SDK in the world,which share easily with 40+ platforms.'
   s.license          = 'MIT'
   s.author           = { "Jinghuang Liu" => "liujinghuang@icloud.com" }
 
   s.homepage         = 'http://www.mob.com'
-  s.source           = { :git => "https://github.com/ShareSDKPlatform/ShareSDK.git", :tag => s.version.to_s }
+  s.source           = { :git => "https://github.com/MobClub/ShareSDK-for-iOS-Spec.git", :tag => s.version.to_s }
   s.platform         = :ios
   s.ios.deployment_target = "6.0"
   s.frameworks       = 'UIKit', 'JavaScriptCore','SystemConfiguration','CoreTelephony'
