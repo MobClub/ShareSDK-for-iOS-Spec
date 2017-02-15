@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'ShareSDK3'
-  s.version          = "3.6.0"
+  s.version          = "3.6.1"
   s.summary          = 'ShareSDK is the most comprehensive Social SDK in the world,which share easily with 40+ platforms.'
   s.license          = 'MIT'
   s.author           = { "Jinghuang Liu" => "liujinghuang@icloud.com" }
@@ -144,6 +144,19 @@ Pod::Spec.new do |s|
             ssp.vendored_frameworks = 'ShareSDK/Support/PlatformConnector/WhatsAppConnector.framework','ShareSDK/ShareSDK.framework','ShareSDK/Support/Required/ShareSDKConnector.framework','ShareSDK/Support/Optional/ShareSDKExtension.framework'
             ssp.resource = 'ShareSDK/Support/Required/ShareSDK.bundle'
         end
+
+        #MeiPai
+        sp.subspec 'MeiPai' do |ssp|
+            ssp.vendored_frameworks = 'ShareSDK/Support/PlatformSDK/MPShareSDK/MPShareSDK.framework','ShareSDK/Support/PlatformConnector/MeiPaiConnector.framework','ShareSDK/ShareSDK.framework','ShareSDK/Support/Required/ShareSDKConnector.framework','ShareSDK/Support/Optional/ShareSDKExtension.framework'
+            ssp.resource = 'ShareSDK/Support/Required/ShareSDK.bundle'
+            ssp.frameworks = 'AssetsLibrary'
+        end
+
+        #YouTube
+        sp.subspec 'YouTube' do |ssp|
+            ssp.vendored_frameworks = 'ShareSDK/Support/PlatformConnector/YouTubeConnector.framework','ShareSDK/ShareSDK.framework','ShareSDK/Support/Required/ShareSDKConnector.framework','ShareSDK/Support/Optional/ShareSDKExtension.framework'
+            ssp.resource = 'ShareSDK/Support/Required/ShareSDK.bundle'
+        end
     end
 
     # ShareSDK 配置文件模块
@@ -155,7 +168,7 @@ Pod::Spec.new do |s|
     # ShareSDK Extension扩展模块
     s.subspec 'ShareSDKExtension' do |sp|
         sp.vendored_frameworks = 'ShareSDK/Support/Optional/ShareSDKExtension.framework','ShareSDK/ShareSDK.framework','ShareSDK/Support/Required/ShareSDKConnector.framework','ShareSDK/Support/Optional/ShareSDKExtension.framework'
-    sp.resources = 'ShareSDK/Support/Required/ShareSDK.bundle'
+        sp.resources = 'ShareSDK/Support/Required/ShareSDK.bundle'
     end
 
     # ShareSDK提供的UI
