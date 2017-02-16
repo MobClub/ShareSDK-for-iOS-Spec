@@ -25,7 +25,7 @@ Pod::Spec.new do |s|
 
     # 各个平台：需要集成哪些平台需要选择相应的平台语句，如果以下语句没有对应的平台，则是：1、不需要（如Twitter），2、ShareSDK尚未支持。
     s.subspec 'ShareSDKPlatforms' do |sp|
-        #sp.default_subspecs = 'QQ', 'SinaWeibo', 'WeChat', 'RenRen', 'AliPaySocial','Kakao','Yixin', 'Messenger','Copy','Evernote','GooglePlus','Instagram','Instapaper','Line','Mail','SMS','WhatsApp','Facebook' - Errors: Can't set `default_subspecs` attribute for subspecs
+        #sp.default_subspecs = 'QQ', 'SinaWeibo', 'WeChat', 'RenRen', 'AliPaySocial','Kakao','Yixin', 'Messenger','Copy','Evernote','GooglePlus','Instagram','Instapaper','Line','Mail','SMS','WhatsApp','Facebook','MeiPai','YouTube' - Errors: Can't set `default_subspecs` attribute for subspecs
 
         # QQ
         sp.subspec 'QQ' do |ssp|
