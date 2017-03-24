@@ -30,7 +30,6 @@
 		44C79FAE1E7FE4C900264524 /* RenrenConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44C79F5E1E7FE4C900264524 /* RenrenConnector.framework */; };
 		44C79FAF1E7FE4C900264524 /* SinaWeiboConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44C79F5F1E7FE4C900264524 /* SinaWeiboConnector.framework */; };
 		44C79FB01E7FE4C900264524 /* SMSConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44C79F601E7FE4C900264524 /* SMSConnector.framework */; };
-		44C79FB11E7FE4C900264524 /* TwitterConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44C79F611E7FE4C900264524 /* TwitterConnector.framework */; };
 		44C79FB21E7FE4C900264524 /* WechatConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44C79F621E7FE4C900264524 /* WechatConnector.framework */; };
 		44C79FB31E7FE4C900264524 /* WhatsAppConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44C79F631E7FE4C900264524 /* WhatsAppConnector.framework */; };
 		44C79FB41E7FE4C900264524 /* YiXinConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44C79F641E7FE4C900264524 /* YiXinConnector.framework */; };
@@ -111,7 +110,6 @@
 		44C79F5E1E7FE4C900264524 /* RenrenConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RenrenConnector.framework; sourceTree = "<group>"; };
 		44C79F5F1E7FE4C900264524 /* SinaWeiboConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SinaWeiboConnector.framework; sourceTree = "<group>"; };
 		44C79F601E7FE4C900264524 /* SMSConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SMSConnector.framework; sourceTree = "<group>"; };
-		44C79F611E7FE4C900264524 /* TwitterConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterConnector.framework; sourceTree = "<group>"; };
 		44C79F621E7FE4C900264524 /* WechatConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WechatConnector.framework; sourceTree = "<group>"; };
 		44C79F631E7FE4C900264524 /* WhatsAppConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WhatsAppConnector.framework; sourceTree = "<group>"; };
 		44C79F641E7FE4C900264524 /* YiXinConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YiXinConnector.framework; sourceTree = "<group>"; };
@@ -254,7 +252,6 @@
 				D08BDA601B412B5E00C73757 /* libstdc++.dylib in Frameworks */,
 				D08BDA5E1B412B5800C73757 /* libicucore.dylib in Frameworks */,
 				44C79FBE1E7FE4C900264524 /* TencentOpenAPI.framework in Frameworks */,
-				44C79FB11E7FE4C900264524 /* TwitterConnector.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,7 +311,6 @@
 				44C79F5E1E7FE4C900264524 /* RenrenConnector.framework */,
 				44C79F5F1E7FE4C900264524 /* SinaWeiboConnector.framework */,
 				44C79F601E7FE4C900264524 /* SMSConnector.framework */,
-				44C79F611E7FE4C900264524 /* TwitterConnector.framework */,
 				44C79F621E7FE4C900264524 /* WechatConnector.framework */,
 				44C79F631E7FE4C900264524 /* WhatsAppConnector.framework */,
 				44C79F641E7FE4C900264524 /* YiXinConnector.framework */,
