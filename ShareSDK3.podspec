@@ -124,7 +124,7 @@ Pod::Spec.new do |s|
 
         # Line
         sp.subspec 'Line' do |ssp|
-            ssp.vendored_frameworks = 'ShareSDK/Support/PlatformConnector/LineConnector.framework','ShareSDK/ShareSDK.framework','ShareSDK/Support/Required/ShareSDKConnector.framework','ShareSDK/Support/Optional/ShareSDKExtension.framework'
+            ssp.vendored_frameworks = 'ShareSDK/Support/PlatformSDK/LineSDK/LineSDK.framework','ShareSDK/Support/PlatformConnector/LineConnector.framework','ShareSDK/ShareSDK.framework','ShareSDK/Support/Required/ShareSDKConnector.framework','ShareSDK/Support/Optional/ShareSDKExtension.framework'
             ssp.resource = 'ShareSDK/Support/Required/ShareSDK.bundle'
         end
 
