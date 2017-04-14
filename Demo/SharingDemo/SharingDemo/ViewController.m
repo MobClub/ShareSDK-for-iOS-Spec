@@ -426,9 +426,11 @@
     
     //1、创建分享参数（必要）
     NSMutableDictionary *shareParams = [NSMutableDictionary dictionary];
-    NSArray* imageArray = @[@"http://ww4.sinaimg.cn/bmiddle/005Q8xv4gw1evlkov50xuj30go0a6mz3.jpg"];
+    NSString *path1 = [[NSBundle mainBundle] pathForResource:@"shareImg" ofType:@"png"];
+    NSString *path2 = [[NSBundle mainBundle] pathForResource:@"Icon" ofType:@"png"];
+    NSArray* imageArray = @[@"http://ww4.sinaimg.cn/bmiddle/005Q8xv4gw1evlkov50xuj30go0a6mz3.jpg",[UIImage imageNamed:@"shareImg.png"]];
     [shareParams SSDKSetupShareParamsByText:@"分享内容"
-                                     images:imageArray
+                                     images:@"http://ww4.sinaimg.cn/bmiddle/005Q8xv4gw1evlkov50xuj30go0a6mz3.jpg"
                                         url:[NSURL URLWithString:@"http://www.mob.com"]
                                       title:@"分享标题"
                                        type:SSDKContentTypeAuto];
@@ -540,7 +542,7 @@
                            break;
                    }
                    
-                   if (state != SSDKResponseStateBegin)
+                   if (state != SSDKResponseStateBegin && state != SSDKResponseStateBeginUPLoad)
                    {
                        [theController showLoadingView:NO];
                        [theController.tableView reloadData];
@@ -631,7 +633,7 @@
                           break;
                   }
                   
-                  if (state != SSDKResponseStateBegin)
+                  if (state != SSDKResponseStateBegin &&  state != SSDKResponseStateBeginUPLoad)
                   {
                       [theController showLoadingView:NO];
                       [theController.tableView reloadData];
