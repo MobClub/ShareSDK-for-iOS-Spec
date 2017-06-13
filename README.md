@@ -25,6 +25,24 @@
 **1、ShareSDK（ShareSDK Library），Contains：**
 
 ```
+SDK
+  | ----- Required
+        | ----- MOBFoundation.framework：Basic Functions Framework。（necessary)
+  | ----- ShareSDK
+        | ----- ShareSDK.framework：Core Framework。（necessary）
+        | ----- Support
+              | ----- Required 
+                   | ----- ShareSDK.bundle：ShareSDK Resources。（necessary）
+                   | ----- ShareSDKConnector.framework：Acting framework for plug-ShareSDK frame and outer frame connection. When necessary, use a third-party SDK.
+              | ----- PlatformSDK: Third-party platform's SDK（Platform SDK does not require can be removable） 
+              | ----- PlatformConnector 对ShareSDKConnector模块架构进行优化，根据平台进行分包。（不需要的平台的库可以移除）
+              | ----- Optional （ 可选 ）
+              		| ----- ShareSDKExtension.framework：ShareSDK framework for functional expansion plug. Currently the main provider of third-party platform login, onekey share, screenshots sharing, shake sharing and other related functions. We need to use the above functions necessary。
+                    | ----- ShareSDKUI.bundle：Share menu bar and share editorial page Resources。（customize these UI can be removed directly）
+                    | ----- ShareSDKUI.framework：Share menu bar and share editorial page。（customize these UI can be removed directly）
+                    | ----- ShareSDKConfigFile.bundle:用xml来初始化或者构造分享参数的资源文件。（用代码来初始化，构造分享参数可直接移除，下载的时候也是可根据自己的要求勾选下载的）
+                    | ----- ShareSDKConfigFile.framework：用xml来初始化，构造分享参数，使用的分享的方法库。用代码来初始化，构造分享参数可直接移除，下载的时候也是可根据自己的要求勾选下载的）
+
 (1) ShareSDK.framework：Core Framework。（necessary）
 (2) Support Folder. Contains:
      (a) Required :
