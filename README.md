@@ -28,35 +28,20 @@
 SDK
   | ----- Required
         | ----- MOBFoundation.framework：Basic Functions Framework。（necessary)
-  | ----- ShareSDK
+  | ----- ShareSDK 
         | ----- ShareSDK.framework：Core Framework。（necessary）
         | ----- Support
-              | ----- Required 
+              | ----- Required
                    | ----- ShareSDK.bundle：ShareSDK Resources。（necessary）
-                   | ----- ShareSDKConnector.framework：Acting framework for plug-ShareSDK frame and outer frame connection. When necessary, use a third-party SDK.
-              | ----- PlatformSDK: Third-party platform's SDK（Platform SDK does not require can be removable） 
-              | ----- PlatformConnector 对ShareSDKConnector模块架构进行优化，根据平台进行分包。（不需要的平台的库可以移除）
-              | ----- Optional （ 可选 ）
+                   | ----- ShareSDKConnector.framework：Acting framework for plug-ShareSDK frame and outer frame connection. When necessary, use a third-party SDK.（necessary）
+              | ----- Third-party platform's SDK（Platform SDK does not require can be removable）
+              | ----- PlatformConnector 
+              | ----- Optional
               		| ----- ShareSDKExtension.framework：ShareSDK framework for functional expansion plug. Currently the main provider of third-party platform login, onekey share, screenshots sharing, shake sharing and other related functions. We need to use the above functions necessary。
                     | ----- ShareSDKUI.bundle：Share menu bar and share editorial page Resources。（customize these UI can be removed directly）
                     | ----- ShareSDKUI.framework：Share menu bar and share editorial page。（customize these UI can be removed directly）
-                    | ----- ShareSDKConfigFile.bundle:用xml来初始化或者构造分享参数的资源文件。（用代码来初始化，构造分享参数可直接移除，下载的时候也是可根据自己的要求勾选下载的）
-                    | ----- ShareSDKConfigFile.framework：用xml来初始化，构造分享参数，使用的分享的方法库。用代码来初始化，构造分享参数可直接移除，下载的时候也是可根据自己的要求勾选下载的）
-
-(1) ShareSDK.framework：Core Framework。（necessary）
-(2) Support Folder. Contains:
-     (a) Required :
-         ----- MOBFoundation.framework：Basic Functions Framework。（necessary)
-         ----- ShareSDK.bundle：ShareSDK Resources。（necessary）
-         ----- ShareSDKConnector.framework：Acting framework for plug-ShareSDK frame and outer frame connection. When necessary, use a third-party SDK.
- 
-     (b) Optional :
-         ----- ShareSDKExtension.framework：ShareSDK framework for functional expansion plug. Currently the main provider of third-party platform login, onekey share, screenshots sharing, shake sharing and other related functions. We need to use the above functions necessary。
-         ----- ShareSDKInterfaceAdapter.framework：The interface-compatible package to ShareSDK v2.X。(Use ShareSDK v3.X of the proposal directly interfaces)
-         ----- ShareSDKUI.bundle：Share menu bar and share editorial page Resources。（customize these UI can be removed directly）
-         ----- ShareSDKUI.framework：Share menu bar and share editorial page。（customize these UI can be removed directly）
- 
-     (c) PlatformSDK:Third-party platform's SDK（Platform SDK does not require can be removable）
+                    | ----- ShareSDKConfigFile.bundle
+                    | ----- ShareSDKConfigFile.framework
 ```
 
 
@@ -113,6 +98,8 @@ SDK
   pod 'ShareSDK3/ShareSDKPlatforms/MeiPai'
   pod 'ShareSDK3/ShareSDKPlatforms/YouTube'
   pod 'ShareSDK3/ShareSDKPlatforms/Twitter'
+  pod 'ShareSDK3/ShareSDKPlatforms/DingTalk'
+  pod 'ShareSDK3/ShareSDKPlatforms/Dropbox'
   
   #using the configuration file sharing module (optional) 
   pod 'ShareSDK3/ShareSDKConfigurationFile'
@@ -186,9 +173,12 @@ The steps of adding the framework:
 
 1、Log in to http://reg.sharesdk.cn/ to register to be a Mob developer , and click here to create a Mob application, then you will get the Appkey.
 
-2、Open AppDelegate.m to import the .h file
+2.Set MOBAppKey and MOBAppSecret in Info.plist
+![(setappkey)](http://wiki.mob.com/wp-content/uploads/2017/06/appkey.jpeg)
 
-3、appliance each SNS's Open Platform key，refer to：http://bbs.mob.com/forum.php?mod=viewthread&tid=275&page=1&extra=#pid860
+3、Open AppDelegate.m to import the .h file
+
+4、appliance each SNS's Open Platform key，refer to：http://bbs.mob.com/forum.php?mod=viewthread&tid=275&page=1&extra=#pid860
 
 ```objc
 #import <ShareSDK/ShareSDK.h>
@@ -215,8 +205,7 @@ and add the initialize code to the -(BOOL)application: didFinishLaunchingWithOpt
 ```objc
 -   (BOOL)application:(UIApplication )application didFinishLaunchingWithOptions:(NSDictionary )launchOptions 
 {     
-     [ShareSDK registerApp:@"*****"  // *** is the AppKey that you just got 
-           activePlatforms:@[
+     [ShareSDK registerActivePlatforms:@[
                             @(SSDKPlatformTypeSinaWeibo),
                             @(SSDKPlatformTypeMail),
                             @(SSDKPlatformTypeSMS),
