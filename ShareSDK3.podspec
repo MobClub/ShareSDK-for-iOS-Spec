@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'ShareSDK3'
-  s.version          = "4.0.3"
+  s.version          = "4.0.4"
   s.summary          = 'ShareSDK is the most comprehensive Social SDK in the world,which share easily with 40+ platforms.'
   s.license          = 'MIT'
   s.author           = { "Jinghuang Liu" => "liujinghuang@icloud.com" }
@@ -8,10 +8,9 @@ Pod::Spec.new do |s|
   s.homepage         = 'http://www.mob.com'
   s.source           = { :git => "https://github.com/MobClub/ShareSDK-for-iOS-Spec.git", :tag => s.version.to_s }
   s.platform         = :ios
-  s.ios.deployment_target = "6.0"
-  s.frameworks       = 'UIKit', 'JavaScriptCore','SystemConfiguration','CoreTelephony'
-  s.libraries        = 'icucore', 'z.1.2.5', 'stdc++'
-
+  s.ios.deployment_target = "8.0"
+  s.frameworks       = 'JavaScriptCore'
+  s.libraries        = 'z.1.2.5', 'stdc++'
   s.default_subspecs    = 'ShareSDK'
   s.vendored_frameworks = 'SDK/ShareSDK/ShareSDK.framework'
   s.dependency 'MOBFoundation'
@@ -19,7 +18,7 @@ Pod::Spec.new do |s|
   # 核心模块
     s.subspec 'ShareSDK' do |sp|
         sp.vendored_frameworks = 'SDK/ShareSDK/ShareSDK.framework','SDK/ShareSDK/Support/Required/ShareSDKConnector.framework'
-        sp.libraries = 'icucore', 'z', 'stdc++'
+        sp.libraries = 'z', 'stdc++'
         sp.resources = 'SDK/ShareSDK/Support/Required/ShareSDK.bundle'
     end
 
